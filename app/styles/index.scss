@@ -1,1 +1,47 @@
+$primary: green;
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Press+Start+2P&family=VT323&display=swap');
+
+$font-family: 'Press Start 2P', serif;
+$bg-body-color: $black;
+$box-color: $black;
+$font-color: rgb(199, 199, 199);
+$btn-primary: green;
+
+body {
+  background-color: $bg-body-color;
+  color: green;
+  // margin: 325px;
+  // display: flex;
+}
+.container {
+    padding: 0px 0px 50px 0px;
+    justify-content: center;
+}
+.game {
+  height: 180px;
+  width: 400px;
+  background-color: $black;
+  border: $black;
+}
+.box {
+  align-items: center;
+  background-color: $box-color;
+  border: 1px solid rgb(199, 199, 199);
+  color: $font-color;
+  display: flex;
+  font-family: $font-family;
+//   height: 200px;
+  justify-content: center;
+//   width: 400px;
+  font-size: 108px;
+}
+
+.row {
+    width: 800px;
+    justify-content: center;
+}
+
+h1, h2 {
+  font-family: $font-family;
+}
