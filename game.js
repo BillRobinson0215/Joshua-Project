@@ -1,5 +1,7 @@
-const xMoves = ['', '', '', '', '', '', '', '', '']
-const oMoves = ['', '', '', '', '', '', '', '', '']
+const appUi = require('./app/ui.js')
+
+const xMoves = []
+const oMoves = []
 const winCons = [
   [0, 1, 2],
   [0, 3, 6],
@@ -11,46 +13,41 @@ const winCons = [
   [6, 7, 8]
 ]
 
-let playerTurn = true
+const toggle = function () {
+  if (appUi.playerTurn.xTurn !== true) {
+    appUi.playerTurn.xTurn = true
+  } else {
+    appUi.playerTurn.xTurn = false
+  }
+}
 
-// const stopsBetweenStations = function (
-//   startLine,
-//   startStation,
-//   endLine,
-//   endStation
-// ) {
-//   const distance = 0
-//   if (startLine === 'Red' && endLine === 'Red') {
-//     return Math.abs(redLine[startStation] - redLine[endStation])
-//   }
-//   if (startLine === 'Orange' && endLine === 'Orange') {
-//     return Math.abs(orangeLine[startStation] - orangeLine[endStation])
-//   }
-//   if (startLine === 'Green' && endLine === 'Green') {
-//     return Math.abs(greenLine[startStation] - greenLine[endStation])
-//   }
-//   if (startLine === 'Red' && endLine === 'Green') {
-//     return Math.abs(redLine[startStation] + greenLine[endStation])
-//   }
-//   if (startLine === 'Red' && endLine === 'Orange') {
-//     return Math.abs(redLine[startStation] + orangeLine[endStation])
-//   }
-//   if (startLine === 'Green' && endLine === 'Red') {
-//     return Math.abs(greenLine[startStation] + redLine[endStation])
-//   }
-//   if (startLine === 'Green' && endLine === 'Orange') {
-//     return Math.abs(greenLine[startStation] + orangeLine[endStation])
-//   }
-//   if (startLine === 'Orange' && endLine === 'Red') {
-//     return Math.abs(orangeLine[startStation] + redLine[endStation])
-//   }
-//   if (startLine === 'Orange' && endLine === 'Green') {
-//     return Math.abs(orangeLine[startStation] + greenLine[endStation])
-//   }
-// }
-// console
-// .log(stopsBetweenStations('Red', 'Davis', 'Red', 'Alewife'))
+const checkWin = function () {
+  for (const con of winCons) {
+    if (con.every(num => xMoves.includes(num))) {
+      console.log('X Wins!')
+      $('.game').hide()
+    }
+  }
+  for (const con of winCons) {
+    if (con.every(num => oMoves.includes(num))) {
+      console.log('O Wins!')
+      $('.game').hide()
+    }
+  }
+}
+
+const boardState = function (arrayValue) {
+  if (appUi.playerTurn.xTurn === true) {
+    xMoves.push(Number(arrayValue))
+  } if (appUi.playerTurn.xTurn !== true) {
+    oMoves.push(Number(arrayValue))
+  }
+  console.log(xMoves)
+  console.log(oMoves)
+}
 
 module.exports = {
-  playerTurn
+  boardState,
+  toggle,
+  checkWin
 }

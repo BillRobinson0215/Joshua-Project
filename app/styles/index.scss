@@ -24,6 +24,9 @@ body {
   background-color: $black;
   border: $black;
 }
+.row {
+  margin: 0px 0px 0px 300px;
+}
 .box {
   align-items: center;
   background-color: $box-color;
@@ -40,6 +43,8 @@ body {
 .row {
     width: 800px;
     justify-content: center;
+    color: rgb(199, 199, 199);
+    font-size: 108px;
 }
 
 h1, h2 {

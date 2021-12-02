@@ -14,18 +14,17 @@
     <h2>Shall we play a game?</h2>
 </div>
   <div class="row">
-    <div class="col-sm-4 box"><button value= "0" class="game" id= "0"></button></div>
-    <div class="col-sm-4 box"><button value= "1" class="game" id= "1"></button></div>
-    <div class="col-sm-4 box"><button value= "2" class="game" id= "2"></button></div>
-    <div class="col-sm-4 box"><button value= "3" class="game" id= "3"></button></div>
-    <div class="col-sm-4 box"><button value= "4" class="game" id= "4"></button></div>
-    <div class="col-sm-4 box"><button value= "5" class="game" id= "5"></button></div>
-    <div class="col-sm-4 box"><button value= "6" class="game" id= "6"></button></div>
-    <div class="col-sm-4 box"><button value= "7" class="game" id= "7"></button></div>
-    <div class="col-sm-4 box"><button value= "8" class="game" id= "8"></button></div>
+    <div class="col-sm-4 box" id = "div0"><button value= "0" class="game" id= "btn0"></button></div>
+    <div class="col-sm-4 box" id = "div1"><button value= "1" class="game" id= "btn1"></button></div>
+    <div class="col-sm-4 box" id = "div2"><button value= "2" class="game" id= "btn2"></button></div>
+    <div class="col-sm-4 box" id = "div3"><button value= "3" class="game" id= "btn3"></button></div>
+    <div class="col-sm-4 box" id = "div4"><button value= "4" class="game" id= "btn4"></button></div>
+    <div class="col-sm-4 box" id = "div5"><button value= "5" class="game" id= "btn5"></button></div>
+    <div class="col-sm-4 box" id = "div6"><button value= "6" class="game" id= "btn6"></button></div>
+    <div class="col-sm-4 box" id = "div7"><button value= "7" class="game" id= "btn7"></button></div>
+    <div class="col-sm-4 box" id = "div8"><button value= "8" class="game" id= "btn8"></button></div>
   </div>
 
-    <!-- Modal -->
   <h3>Sign Up</h3>
       <form id="sign-up-form">
         <input type="email" name="credentials[email]" placeholder="Email@gmail.com"/>
@@ -33,7 +32,7 @@
         <input type="password" name="credentials[password_confirmation]" placeholder="password1234"/>
         <button>Submit</button>
   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
+    Restart
   </button>
   </form>
   <h3>Sign In</h3>
@@ -46,25 +45,6 @@
   <form id="sign-out-form">
   <button>Sign Out</button>
   </form>
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">No Winning Solution</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">Play Again?</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            No
-          </button>
-          <button type="button" class="btn btn-primary">
-            Yes
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
 </body>
 
 </html>
