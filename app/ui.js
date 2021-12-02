@@ -1,15 +1,19 @@
 'use strict'
-const playerTurn = true
+const playerTurn = {
+  xTurn: true
+}
 const store = require('./store')
-const appGame = require('../game.js')
+// const appGame = require('../game.js')
 
 const onSignUpSuccess = function () {
   $('.success-message').text('User sign up success!')
   $('form').trigger('reset')
+  console.log('success')
 }
 const onSignUpFailure = function () {
   $('.error-message').text('Failed to sign up')
   $('.success-message').text('')
+  console.log('fail')
 }
 
 const onSignInSuccess = function (response) {
@@ -34,12 +38,15 @@ const onSignOutFailure = function () {
 }
 
 const moveMade = function (event) {
-  console.log(event)
-//   if (playerTurn === true) {
-//     $(targetDiv).text('X')
-//   } else {
-//     $(targetDiv).text('O')
-//   }
+  console.log('this before logging move in moveMade', playerTurn)
+  if (playerTurn.xTurn === true) {
+    $(`#div${event.target.value}`).text('X')
+  } else {
+    $(`#div${event.target.value}`).text('O')
+  }
+  console.log('this is after logging the move in moveMade', playerTurn)
+  $(event.target).hide()
+  console.log('this is after hiding the button in moveMade', playerTurn)
 }
 module.exports = {
   onSignUpFailure,
@@ -48,5 +55,6 @@ module.exports = {
   onSignInSuccess,
   onSignOutFailure,
   onSignOutSuccess,
-  moveMade
+  moveMade,
+  playerTurn
 }
