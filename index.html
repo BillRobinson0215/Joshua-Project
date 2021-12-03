@@ -24,27 +24,28 @@
     <div class="col-sm-4 box" id = "div7"><button value= "7" class="game" id= "btn7"></button></div>
     <div class="col-sm-4 box" id = "div8"><button value= "8" class="game" id= "btn8"></button></div>
   </div>
-
+  <p class="message"></p>
+<button type="button" class="btnRestart">Restart</button>
+<nav>
   <h3>Sign Up</h3>
-      <form id="sign-up-form">
-        <input type="email" name="credentials[email]" placeholder="Email@gmail.com"/>
-        <input type="password" name="credentials[password]" placeholder="password1234"/>
-        <input type="password" name="credentials[password_confirmation]" placeholder="password1234"/>
-        <button>Submit</button>
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Restart
-  </button>
+  <form id="sign-up-form">
+    <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+    <input type="password" name="credentials[password]" placeholder="Create Password" />
+    <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
+    <button>Submit</button>
   </form>
   <h3>Sign In</h3>
   <form id="sign-in-form">
     <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
-    <input type="password" name="credentials[password]" placeholder="password1234" />
+    <input type="password" name="credentials[password]" placeholder="Password" />
     <button>Submit</button>
   </form>
   <h3>Sign Out</h3>
   <form id="sign-out-form">
-  <button>Sign Out</button>
+    <button>Sign Out</button>
   </form>
+</nav>
+
 </body>
 
 </html>

@@ -1,40 +1,35 @@
 'use strict'
+// const joshGame = require('../game.js')
 const playerTurn = {
   xTurn: true
 }
 const store = require('./store')
-// const appGame = require('../game.js')
 
 const onSignUpSuccess = function () {
-  $('.success-message').text('User sign up success!')
+  $('.message').text('New account created Professor.')
   $('form').trigger('reset')
   console.log('success')
 }
 const onSignUpFailure = function () {
-  $('.error-message').text('Failed to sign up')
-  $('.success-message').text('')
+  $('.message').text('Invalid account Professor.')
   console.log('fail')
 }
 
 const onSignInSuccess = function (response) {
-  $('.success-message').text('Welcome Back!')
+  $('.message').text('Welcome back Professor.')
   $('form').trigger('reset')
-  $('.error-message').text('')
   store.user = response.user
 }
 const onSignInFailure = function () {
-  $('.error-message').text('Failed to sign in')
-  $('.success-message').text('')
+  $('.message').text('Invalid entry Professor.')
 }
 
 const onSignOutSuccess = function () {
-  $('.success-message').text('Good-Bye!')
+  $('.message').text('Good-Bye Professor.')
   $('form').trigger('reset')
-  $('.error-message').text('')
 }
 const onSignOutFailure = function () {
-  $('.error-message').text('Failed to sign out')
-  $('.success-message').text('')
+  $('.message').text('Failed to sign out')
 }
 
 const moveMade = function (event) {
@@ -48,6 +43,13 @@ const moveMade = function (event) {
   $(event.target).hide()
   console.log('this is after hiding the button in moveMade', playerTurn)
 }
+
+const restart = function () {
+//     let joshGame.xMoves = []
+//     let joshGame.oMoves = []
+  $('.game').show()
+}
+
 module.exports = {
   onSignUpFailure,
   onSignUpSuccess,
@@ -56,5 +58,6 @@ module.exports = {
   onSignOutFailure,
   onSignOutSuccess,
   moveMade,
-  playerTurn
+  playerTurn,
+  restart
 }

@@ -6,27 +6,70 @@ $font-family: 'Press Start 2P', serif;
 $bg-body-color: $black;
 $box-color: $black;
 $font-color: rgb(199, 199, 199);
-$btn-primary: green;
 
 body {
   background-color: $bg-body-color;
   color: green;
+  // background-image: url("https://i.ytimg.com/vi/HxjjK8QXA9c/maxresdefault.jpg");
+  // background: cover;
+  // background-repeat: no-repeat;
+  // background-size: 100%;
   // margin: 325px;
   // display: flex;
 }
-.container {
-    padding: 0px 0px 50px 0px;
-    justify-content: center;
+
+nav {
+  position: absolute;
+  justify-content: left;
+  display: flex;
+  margin: 30px 20px 0px 20px;
 }
+
+input {
+  display: flex;
+  margin: auto;
+
+}
+
+p {
+  margin: auto;
+  font-family: $font-family;
+  font-size: 25px;
+}
+
+.container {
+    padding: 20px 0px 20px 0px;
+    justify-content: center;
+    margin: auto;
+}
+
 .game {
   height: 180px;
   width: 400px;
   background-color: $black;
   border: $black;
 }
-.row {
-  margin: 0px 0px 0px 300px;
+
+form {
+  font-family: $font-family;
+  margin: 15px;
 }
+
+button {
+  font-family: $font-family;
+  background-color: black;
+  color: rgb(199, 199, 199);
+  border-color: green;
+  // margin: 20px;
+  align-items: right;
+}
+
+input {
+  background-color: black;
+  border-color:green;
+  color: rgb(199, 199, 199);
+}
+
 .box {
   align-items: center;
   background-color: $box-color;
@@ -34,19 +77,21 @@ body {
   color: $font-color;
   display: flex;
   font-family: $font-family;
-//   height: 200px;
+  height: 200px;
   justify-content: center;
-//   width: 400px;
   font-size: 108px;
 }
 
 .row {
     width: 800px;
     justify-content: center;
+    align-items: center;
     color: rgb(199, 199, 199);
     font-size: 108px;
+    margin: auto;
+    // margin: 0px 0px 0px 300px;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: $font-family;
 }
