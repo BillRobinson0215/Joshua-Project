@@ -51,8 +51,8 @@ const onSignOut = function (event) {
 const onMoveMade = function (event) {
   event.preventDefault()
   appUi.moveMade(event)
-  joshGame.boardState(event.target.value)
-  joshGame.toggle()
+  appUi.boardState(event.target.value)
+  appUi.toggle()
   joshGame.checkWin()
 
   // joshApi

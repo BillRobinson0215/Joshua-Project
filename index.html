@@ -8,11 +8,12 @@
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
-<body>
+<div id="style">
+<body class="body" style="width: 100vw; height: 100vh;">
   <div class="container">
     <h1>W.O.P.R.</h1>
     <h2>Shall we play a game?</h2>
-</div>
+  </div>
   <div class="row">
     <div class="col-sm-4 box" id = "div0"><button value= "0" class="game" id= "btn0"></button></div>
     <div class="col-sm-4 box" id = "div1"><button value= "1" class="game" id= "btn1"></button></div>
@@ -25,8 +26,8 @@
     <div class="col-sm-4 box" id = "div8"><button value= "8" class="game" id= "btn8"></button></div>
   </div>
   <p class="message"></p>
-<button type="button" class="btnRestart">Restart</button>
-<nav>
+  <button type="button" class="btnRestart">Restart</button>
+  <nav>
   <h3>Sign Up</h3>
   <form id="sign-up-form">
     <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
@@ -47,5 +48,6 @@
 </nav>
 
 </body>
+</div>
 
 </html>
