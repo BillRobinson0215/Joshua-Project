@@ -2,7 +2,6 @@
 const joshApi = require('./api.js')
 const getFormFields = require('../lib/get-form-fields.js')
 const appUi = require('./ui.js')
-const joshGame = require('../game.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -53,7 +52,7 @@ const onMoveMade = function (event) {
   appUi.moveMade(event)
   appUi.boardState(event.target.value)
   appUi.toggle()
-  joshGame.checkWin()
+  appUi.checkWin()
 
   // joshApi
   //   .moveMade(authData)
@@ -61,9 +60,14 @@ const onMoveMade = function (event) {
   //   .catch(appUi.onSignInFailure)
 }
 
+const onRestart = function () {
+  appUi.restart()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onMoveMade
+  onMoveMade,
+  onRestart
 }
