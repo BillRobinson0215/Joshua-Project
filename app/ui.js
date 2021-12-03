@@ -1,35 +1,40 @@
 'use strict'
-const joshGame = require('../game.js')
 const playerTurn = {
   xTurn: true
 }
 const store = require('./store')
+// const appGame = require('../game.js')
 
 const onSignUpSuccess = function () {
-  $('.message').text('New account created Professor.')
+  $('.success-message').text('User sign up success!')
   $('form').trigger('reset')
   console.log('success')
 }
 const onSignUpFailure = function () {
-  $('.message').text('Invalid account Professor.')
+  $('.error-message').text('Failed to sign up')
+  $('.success-message').text('')
   console.log('fail')
 }
 
 const onSignInSuccess = function (response) {
-  $('.message').text('Welcome back Professor.')
+  $('.success-message').text('Welcome Back!')
   $('form').trigger('reset')
+  $('.error-message').text('')
   store.user = response.user
 }
 const onSignInFailure = function () {
-  $('.message').text('Invalid entry Professor.')
+  $('.error-message').text('Failed to sign in')
+  $('.success-message').text('')
 }
 
 const onSignOutSuccess = function () {
-  $('.message').text('Good-Bye Professor.')
+  $('.success-message').text('Good-Bye!')
   $('form').trigger('reset')
+  $('.error-message').text('')
 }
 const onSignOutFailure = function () {
-  $('.message').text('Failed to sign out')
+  $('.error-message').text('Failed to sign out')
+  $('.success-message').text('')
 }
 
 const moveMade = function (event) {
@@ -40,36 +45,6 @@ const moveMade = function (event) {
   }
   $(event.target).hide()
 }
-
-const restart = function () {
-  joshGame.xMoves = []
-  joshGame.oMoves = []
-  $('.game').show()
-}
-
-const getPlayerTurn = () => {
-  return playerTurn.xTurn
-}
-
-const boardState = function (arrayValue) {
-  if (playerTurn === true) {
-    joshGame.xMoves.push(Number(arrayValue))
-  }
-  if (playerTurn.xTurn !== true) {
-    joshGame.oMoves.push(Number(arrayValue))
-  }
-  console.log('X: ' + joshGame.xMoves)
-  console.log('O: ' + joshGame.oMoves)
-}
-
-const toggle = function () {
-  if (playerTurn.xTurn !== true) {
-    playerTurn.xTurn = true
-  } else {
-    playerTurn.xTurn = false
-  }
-}
-
 module.exports = {
   onSignUpFailure,
   onSignUpSuccess,
@@ -78,8 +53,5 @@ module.exports = {
   onSignOutFailure,
   onSignOutSuccess,
   moveMade,
-  restart,
-  getPlayerTurn,
-  boardState,
-  toggle
+  playerTurn
 }
