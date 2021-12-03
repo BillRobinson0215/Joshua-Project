@@ -1,5 +1,5 @@
 'use strict'
-// const joshGame = require('../game.js')
+const joshGame = require('../game.js')
 const playerTurn = {
   xTurn: true
 }
@@ -33,21 +33,41 @@ const onSignOutFailure = function () {
 }
 
 const moveMade = function (event) {
-  console.log('this before logging move in moveMade', playerTurn)
   if (playerTurn.xTurn === true) {
     $(`#div${event.target.value}`).text('X')
   } else {
     $(`#div${event.target.value}`).text('O')
   }
-  console.log('this is after logging the move in moveMade', playerTurn)
   $(event.target).hide()
-  console.log('this is after hiding the button in moveMade', playerTurn)
 }
 
 const restart = function () {
-//     let joshGame.xMoves = []
-//     let joshGame.oMoves = []
+  joshGame.xMoves = []
+  joshGame.oMoves = []
   $('.game').show()
+}
+
+const getPlayerTurn = () => {
+  return playerTurn.xTurn
+}
+
+const boardState = function (arrayValue) {
+  if (playerTurn === true) {
+    joshGame.xMoves.push(Number(arrayValue))
+  }
+  if (playerTurn.xTurn !== true) {
+    joshGame.oMoves.push(Number(arrayValue))
+  }
+  console.log('X: ' + joshGame.xMoves)
+  console.log('O: ' + joshGame.oMoves)
+}
+
+const toggle = function () {
+  if (playerTurn.xTurn !== true) {
+    playerTurn.xTurn = true
+  } else {
+    playerTurn.xTurn = false
+  }
 }
 
 module.exports = {
@@ -58,6 +78,8 @@ module.exports = {
   onSignOutFailure,
   onSignOutSuccess,
   moveMade,
-  playerTurn,
-  restart
+  restart,
+  getPlayerTurn,
+  boardState,
+  toggle
 }

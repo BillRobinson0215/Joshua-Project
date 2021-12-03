@@ -13,13 +13,13 @@ const winCons = [
   [6, 7, 8]
 ]
 
-const toggle = function () {
-  if (appUi.playerTurn.xTurn !== true) {
-    appUi.playerTurn.xTurn = true
-  } else {
-    appUi.playerTurn.xTurn = false
-  }
-}
+// const toggle = function () {
+//   if (appUi.playerTurn.xTurn !== true) {
+//     appUi.playerTurn.xTurn = true
+//   } else {
+//     appUi.playerTurn.xTurn = false
+//   }
+// }
 
 const checkWin = function () {
   for (const con of winCons) {
@@ -40,20 +40,35 @@ const checkWin = function () {
     console.log('The only winning move is not to play')
     $('.message').text('No winning solution.')
   }
+  for (const con of winCons) {
+    if (con.every(num => xMoves.includes(num))) {
+      console.log('X Wins!')
+      $('.message').text('X Wins.')
+      $('.game').hide()
+    }
+  }
+  for (const con of winCons) {
+    if (con.every(num => oMoves.includes(num))) {
+      console.log('O Wins!')
+      $('.message').text('O Wins.')
+      $('.game').hide()
+    }
+  }
 }
 
-const boardState = function (arrayValue) {
-  if (appUi.playerTurn.xTurn === true) {
-    xMoves.push(Number(arrayValue))
-  } if (appUi.playerTurn.xTurn !== true) {
-    oMoves.push(Number(arrayValue))
-  }
-  console.log('X: ' + xMoves)
-  console.log('O: ' + oMoves)
-}
+// const boardState = function (arrayValue) {
+//   if (appUi.playerTurn === true) {
+//     xMoves.push(Number(arrayValue))
+//   } if (appUi.playerTurn.xTurn !== true) {
+//     oMoves.push(Number(arrayValue))
+//   }
+//   console.log('X: ' + xMoves)
+//   console.log('O: ' + oMoves)
+// }
 
 module.exports = {
-  boardState,
-  toggle,
-  checkWin
+//   boardState,
+  checkWin,
+  xMoves,
+  oMoves
 }

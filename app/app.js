@@ -19,5 +19,5 @@ $(() => {
   $('#btn6').on('click', authEvents.onMoveMade)
   $('#btn7').on('click', authEvents.onMoveMade)
   $('#btn8').on('click', authEvents.onMoveMade)
-  $('.btnRestart').on('click', authEvents.onRestart)
+  // $('.btnRestart').on('click', authEvents.onRestart)
 })

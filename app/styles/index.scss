@@ -7,15 +7,15 @@ $bg-body-color: $black;
 $box-color: $black;
 $font-color: rgb(199, 199, 199);
 
-body {
+.body {
   background-color: $bg-body-color;
-  color: green;
-  // background-image: url("https://i.ytimg.com/vi/HxjjK8QXA9c/maxresdefault.jpg");
-  // background: cover;
-  // background-repeat: no-repeat;
-  // background-size: 100%;
-  // margin: 325px;
-  // display: flex;
+  color: rgb(72, 255, 0);
+  background-image: url("https://i.ytimg.com/vi/HxjjK8QXA9c/maxresdefault.jpg");
+  background: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
 }
 
 nav {
@@ -34,7 +34,7 @@ input {
 p {
   margin: auto;
   font-family: $font-family;
-  font-size: 25px;
+  font-size: 35px;
 }
 
 .container {
@@ -62,6 +62,7 @@ button {
   border-color: green;
   // margin: 20px;
   align-items: right;
+  size: 150%;
 }
 
 input {
