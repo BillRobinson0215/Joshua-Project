@@ -61,9 +61,14 @@ const onMoveMade = function (event) {
   //   .catch(appUi.onSignInFailure)
 }
 
+const onRestart = function () {
+  appUi.restart()
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onSignOut,
-  onMoveMade
+  onMoveMade,
+  onRestart
 }
