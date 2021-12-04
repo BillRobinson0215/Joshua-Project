@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store')
+const appUi = require('./ui.js')
 const config = require('./config.js')
 
 const signUp = function (data) {
@@ -27,8 +28,33 @@ const signOut = function () {
     }
   })
 }
+
+const startNew = function () {
+  return $.ajax({
+    method: 'POST',
+    url: config.apiUrl + '/games',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: {}
+  })
+}
+
+const boardToApi = function () {
+  return $.ajax({
+    method: 'PATCH',
+    url: config.apiUrl + '/games/:id',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    data: appUi.apiObject.apiData
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  startNew,
+  boardToApi
 }

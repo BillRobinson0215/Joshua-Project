@@ -1,5 +1,4 @@
 'use strict'
-// const joshGame = require('../game.js')
 const store = require('./store')
 
 const playerTurn = {
@@ -18,60 +17,77 @@ const winCons = [
   [6, 7, 8]
 ]
 
+const apiObject = {
+  apiData: {
+    game: {
+      cell: {
+        index: null,
+        value: null
+      },
+      over: false
+    }
+  }
+}
+
 const onSignUpSuccess = function () {
-  $('.message').text('New account created Professor.')
+  $('.message').text('New account created, Professor.')
   $('form').trigger('reset')
   console.log('success')
 }
 const onSignUpFailure = function () {
-  $('.message').text('Invalid account Professor.')
+  $('.message').text('Invalid entry..')
   console.log('fail')
 }
 
 const onSignInSuccess = function (response) {
-  $('.message').text('Welcome back Professor.')
+  $('.message').text('Welcome back, Professor.')
   $('form').trigger('reset')
   store.user = response.user
+  $('.in').hide()
+  $('.out').show()
+  $('.row').show()
+  $('.btnRestart').show()
 }
 const onSignInFailure = function () {
-  $('.message').text('Invalid entry Professor.')
+  $('.message').text('Access Denied.')
 }
 
 const onSignOutSuccess = function () {
   $('.message').text('Good-Bye Professor.')
   $('form').trigger('reset')
+  $('.in').show()
+  $('.out').hide()
+  $('.row').hide()
+  $('.btnRestart').hide()
 }
 const onSignOutFailure = function () {
   $('.message').text('Failed to sign out')
 }
 
 const moveMade = function (event) {
-  console.log('this before logging move in moveMade', playerTurn)
   if (playerTurn.xTurn === true) {
     // console.log(event.target)
     // $(`#div${event.target.value}`).text('X')
-    // $('event.target #game-text').text('X')
     $(event.target, '.game-text').text('X')
+    apiObject.apiData.game.cell.value = 'X'
   } else {
-    // $(`#div${event.target.value}`).text('O')
-    // $(event.target).text('O')
     $(event.target, '.game-text').text('O')
+    apiObject.apiData.game.cell.value = 'O'
   }
-  console.log('this is after logging the move in moveMade', playerTurn)
-  // $(event.target).hide()
+  apiObject.apiData.game.cell.index = Number($(event.target).attr('value'))
   $(event.target).prop('disabled', true)
-  console.log('this is after hiding the button in moveMade', playerTurn)
 }
 
 const restart = function () {
   playerTurn.xTurn = true
   xMoves = []
   oMoves = []
-  // $('.game').show()
   $('.game').html(`
-    <span class="game-text"></span>
+    <span class="game-text"> </span>
   `)
+  apiObject.apiData.game.over = false
   $('.game').prop('disabled', false)
+  $('.message').text('')
 }
 
 const toggle = function () {
@@ -87,36 +103,37 @@ const checkWin = function () {
     if (con.every((num) => xMoves.includes(num))) {
       console.log('X Wins!')
       $('.message').text('X Wins.')
-      // $('.game').hide()
       $('.game').prop('disabled', true)
+      apiObject.apiData.game.over = true
     }
   }
   for (const con of winCons) {
     if (con.every((num) => oMoves.includes(num))) {
       console.log('O Wins!')
       $('.message').text('O Wins.')
-      // $('.game').hide()
       $('.game').prop('disabled', true)
+      apiObject.apiData.game.over = true
     }
   }
   if (xMoves.length === 5 && oMoves.length === 4) {
     console.log('The only winning move is not to play')
     $('.message').text('No winning solution.')
+    apiObject.apiData.game.over = true
   }
   for (const con of winCons) {
     if (con.every((num) => xMoves.includes(num))) {
       console.log('X Wins!')
       $('.message').text('X Wins.')
-      // $('.game').hide()
       $('.game').prop('disabled', true)
+      apiObject.apiData.game.over = true
     }
   }
   for (const con of winCons) {
     if (con.every((num) => oMoves.includes(num))) {
       console.log('O Wins!')
       $('.message').text('O Wins.')
-      // $('.game').hide()
       $('.game').prop('disabled', true)
+      apiObject.apiData.game.over = true
     }
   }
 }
@@ -144,5 +161,6 @@ module.exports = {
   restart,
   boardState,
   checkWin,
-  toggle
+  toggle,
+  apiObject
 }
