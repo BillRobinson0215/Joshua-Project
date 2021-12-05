@@ -35,7 +35,7 @@ const onSignUpSuccess = function () {
   console.log('success')
 }
 const onSignUpFailure = function () {
-  $('.message').text('Invalid entry..')
+  $('.message').text('Invalid entry.')
   console.log('fail')
 }
 
@@ -43,10 +43,10 @@ const onSignInSuccess = function (response) {
   $('.message').text('Welcome back, Professor.')
   $('form').trigger('reset')
   store.user = response.user
-  $('.in').hide()
-  $('.out').show()
-  $('.row').show()
-  $('.btnRestart').show()
+  $('.in').hide(1000)
+  $('.out').show(1000)
+  $('.row').show(1000)
+  $('.btnRestart').show(1000)
 }
 const onSignInFailure = function () {
   $('.message').text('Access Denied.')
@@ -55,10 +55,10 @@ const onSignInFailure = function () {
 const onSignOutSuccess = function () {
   $('.message').text('Good-Bye Professor.')
   $('form').trigger('reset')
-  $('.in').show()
+  $('.in').show(1000)
   $('.out').hide()
-  $('.row').hide()
-  $('.btnRestart').hide()
+  $('.row').hide(1000)
+  $('.btnRestart').hide(1000)
 }
 const onSignOutFailure = function () {
   $('.message').text('Failed to sign out')
