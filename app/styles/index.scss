@@ -13,27 +13,32 @@ body {
   background-repeat: no-repeat;
   background-size: 100%;
 }
-nav {
+.in-nav {
   display: block;
   margin: 0px 0px 0px 20px;
+  position: absolute;
 }
 
 p {
-  margin: auto;
   font-family: $font-family;
-  font-size: 55px;
+  font-size: 35px;
   display: flex;
+  position:absolute;
+    width:900px;
+    bottom:20px;
+    left:27%;
+  align-items: center;
   justify-content: center;
 }
 .container {
-    padding: 20px 0px 20px 0px;
+    padding: 40px 0px 20px 0px;
     justify-content: center;
     margin: auto;
     display: flex inline-block;
 }
 .game {
-  height: 180px;
-  width: 400px;
+  height: 195px;
+  width: 405px;
   background-color: $black;
   border: $black;
   margin: auto;
@@ -59,23 +64,18 @@ input {
 .box {
   justify-items: center;
   background-color: $box-color;
-  border: 3px solid rgb(199, 199, 199);
+  border: 1px solid rgb(199, 199, 199);
   color: $font-color;
   display: flex;
   font-family: $font-family;
   height: 200px;
-  font-size: 108px;
+  font-size: 95px;
 }
 .row {
     width: 800px;
     color: rgb(199, 199, 199);
-    font-size: 108px;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
+    font-size: 95px;
     margin: auto;
-    display: flex;
 }
 h1, h2, h3 {
   font-family: $font-family;
@@ -99,6 +99,7 @@ h1, h2 {
   justify-content: center;
 }
 
-.in a:hide {
-  display: hidden;
+.out-nav  {
+  display: block;
+  margin: 20px 20px 0px 0px;
 }

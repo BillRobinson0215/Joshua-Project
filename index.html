@@ -10,11 +10,17 @@
 </head>
 
 <body>
-  <div style="float: none;" class="container">
+    <nav class="out-nav" style="float: right;">
+      <form style="display: none;" class="out" id="sign-out-form">
+        <h3 class="title">Sign Out</h3>
+        <button class="navbutton">Sign Out</button>
+      </form>
+    </nav>
+  <div class="container">
     <h1>W.O.P.R.</h1>
     <h2>Shall we play a game?</h2>
   </div>
-  <nav style="float: left;">
+  <nav class="in-nav" style="float: right;">
     <form class="in" id="sign-up-form">
       <h3 class="title">Sign Up</h3>
       <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
@@ -27,10 +33,6 @@
       <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
       <input type="password" name="credentials[password]" placeholder="Password" />
       <button class="navbutton">Submit</button>
-    </form>
-    <form style="display: none;" class="out" id="sign-out-form">
-      <h3 class="title">Sign Out</h3>
-      <button class="navbutton">Sign Out</button>
     </form>
   </nav>
   <div style="display: none;" class="row">
