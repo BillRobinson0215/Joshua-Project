@@ -46,8 +46,8 @@ const onSignInSuccess = function (response) {
   console.log(store)
   $('.in').hide(1000)
   $('.out').show(1000)
-  $('.row').show(1000)
-  $('.btnRestart').show(1000)
+  $('.row').show(1750)
+  $('.btnRestart').show(2000)
 }
 
 const onSignInFailure = function () {
