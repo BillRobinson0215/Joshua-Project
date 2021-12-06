@@ -43,7 +43,7 @@ const startNew = function () {
 const boardToApi = function () {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/games/:id',
+    url: config.apiUrl + '/games/' + store.game._id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },

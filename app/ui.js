@@ -43,11 +43,13 @@ const onSignInSuccess = function (response) {
   $('.message').text('Welcome back, Professor.')
   $('form').trigger('reset')
   store.user = response.user
+  console.log(store)
   $('.in').hide(1000)
   $('.out').show(1000)
   $('.row').show(1000)
   $('.btnRestart').show(1000)
 }
+
 const onSignInFailure = function () {
   $('.message').text('Access Denied.')
 }
@@ -64,6 +66,11 @@ const onSignOutFailure = function () {
   $('.message').text('Failed to sign out')
 }
 
+const onStartNewSuccess = function (response) {
+  $('.message').text('X moves first.')
+  store.game = response.user
+}
+
 const moveMade = function (event) {
   if (playerTurn.xTurn === true) {
     // console.log(event.target)
@@ -78,14 +85,17 @@ const moveMade = function (event) {
   $(event.target).prop('disabled', true)
 }
 
-const restart = function () {
+const restart = function (response) {
   playerTurn.xTurn = true
   xMoves = []
   oMoves = []
-  $('.game').html(`
-    <span class="game-text"> </span>
-  `)
+  $('.game')
+    .html('<span class="game-text"> </span>')
   apiObject.apiData.game.over = false
+  apiObject.apiData.game.cell.index = null
+  apiObject.apiData.game.cell.value = null
+  console.log(response)
+  store.game = response.game
   $('.game').prop('disabled', false)
   $('.message').text('')
 }
@@ -156,6 +166,7 @@ module.exports = {
   onSignInSuccess,
   onSignOutFailure,
   onSignOutSuccess,
+  onStartNewSuccess,
   moveMade,
   playerTurn,
   restart,
