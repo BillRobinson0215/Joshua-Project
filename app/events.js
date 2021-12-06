@@ -1,7 +1,8 @@
-// 'use strict'
+'use strict'
 const joshApi = require('./api.js')
 const getFormFields = require('../lib/get-form-fields.js')
 const appUi = require('./ui.js')
+const store = require('./store')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -20,8 +21,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Welcome, Professor!')
-
   const form = event.target
   const authData = getFormFields(form)
   console.log(authData)
@@ -29,7 +28,14 @@ const onSignIn = function (event) {
   joshApi
     .signIn(authData)
     .then(appUi.onSignInSuccess)
+    .then(joshApi.startNew)
+    .then(res => {
+      store.game = res.game
+      console.log(store)
+    })
+  // console.log('we got here!!!!!!!!')
     .catch(appUi.onSignInFailure)
+  console.log('Welcome, Professor!')
 }
 
 const onSignOut = function (event) {
@@ -53,13 +59,10 @@ const onMoveMade = function (event) {
   appUi.boardState(event.target.value)
   appUi.toggle()
   appUi.checkWin()
-  joshApi.boardToApi()
   console.log(appUi.apiObject)
+  console.log(store)
+  joshApi.boardToApi()
   console.log('Nice move, Professor!')
-
-  const form = appUi.apiObject.apiData
-  const authData = getFormFields(form)
-  console.log(authData)
 
   // joshApi
   // appUi.moveMade(authData)
@@ -68,7 +71,8 @@ const onMoveMade = function (event) {
 }
 
 const onRestart = function () {
-  appUi.restart()
+  joshApi.startNew()
+    .then(appUi.restart)
 }
 
 module.exports = {
