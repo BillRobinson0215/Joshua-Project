@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Joshua</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+    <nav class="out-nav" style="float: right;">
+      <form style="display: none;" class="out" id="sign-out-form">
+        <h3 class="title">Sign Out</h3>
+        <button class="navbutton">Sign Out</button>
+      </form>
+    </nav>
+  <div class="container">
+    <h1>W.O.P.R.</h1>
+    <h2>Shall we play a game?</h2>
+  </div>
+  <nav class="in-nav" style="float: right;">
+    <form class="in" id="sign-up-form">
+      <h3 class="title">Sign Up</h3>
+      <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+      <input type="password" name="credentials[password]" placeholder="Create Password" />
+      <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password" />
+      <button class="navbutton">Submit</button>
+    </form>
+    <form class="in" id="sign-in-form">
+      <h3 class="title">Sign In</h3>
+      <input type="email" name="credentials[email]" placeholder="Email@gmail.com" />
+      <input type="password" name="credentials[password]" placeholder="Password" />
+      <button class="navbutton">Submit</button>
+    </form>
+  </nav>
+  <div style="display: none;"  class="row">
+    <div class="col-sm-4 box" id="div0"><button type="button" value="0" class="game" id="btn0"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div1"><button type="button" value="1" class="game" id="btn1"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div2"><button type="button" value="2" class="game" id="btn2"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div3"><button type="button" value="3" class="game" id="btn3"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div4"><button type="button" value="4" class="game" id="btn4"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div5"><button type="button" value="5" class="game" id="btn5"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div6"><button type="button" value="6" class="game" id="btn6"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div7"><button type="button" value="7" class="game" id="btn7"><span
+          class="game-text"></span></button></div>
+    <div class="col-sm-4 box" id="div8"><button type="button" value="8" class="game" id="btn8"><span
+          class="game-text"></span></button></div>
+  </div>
+  <button style="display: none;" type="button" class="btnRestart">Restart</button>
+  <p class="message"></p>
+</body>
+</html>

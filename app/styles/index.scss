@@ -1,0 +1,109 @@
+$primary: green;
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Press+Start+2P&family=VT323&display=swap');
+$font-family: 'Press Start 2P', serif;
+$bg-body-color: $black;
+$box-color: $black;
+$font-color: rgb(199, 199, 199);
+body {
+  background-color: $bg-body-color;
+  color:rgb(72, 255, 0);
+  background-image: url("https://i.ytimg.com/vi/HxjjK8QXA9c/maxresdefault.jpg");
+  background: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.in-nav {
+  display: block;
+  margin: 0px 0px 0px 20px;
+  position: absolute;
+}
+
+p {
+  font-family: $font-family;
+  font-size: 35px;
+  display: flex;
+  position:absolute;
+    width:900px;
+    bottom:20px;
+    left:26.5%;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+    padding: 40px 0px 20px 0px;
+    justify-content: center;
+    margin: auto;
+    display: flex inline-block;
+}
+.game {
+  height: 195px;
+  width: 405px;
+  background-color: $black;
+  border: $black;
+  margin: auto;
+}
+form {
+  font-family: $font-family;
+  display: hidden;
+}
+button {
+  font-family: $font-family;
+  background-color: black;
+  color: rgb(199, 199, 199);
+  border-color: green;
+  // margin: 0px 0px 15px 0px;
+  align-items: right;
+}
+input {
+  background-color: black;
+  border-color:green;
+  color: rgb(199, 199, 199);
+  display: flex;
+}
+.box {
+  justify-items: center;
+  background-color: $box-color;
+  border: 1px solid rgb(199, 199, 199);
+  color: $font-color;
+  display: flex;
+  font-family: $font-family;
+  height: 200px;
+  font-size: 95px;
+}
+.row {
+    width: 800px;
+    color: rgb(199, 199, 199);
+    font-size: 95px;
+    margin: auto;
+}
+h1, h2, h3 {
+  font-family: $font-family;
+}
+
+.btnRestart{
+  display: flex;
+  margin: auto;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.navbutton {
+ margin: 0px 0px 50px 0px; 
+}
+h1, h2 {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+.out-nav  {
+  display: block;
+  margin: 20px 20px 0px 0px;
+}
+
+html {
+  zoom: 80%;
+}
