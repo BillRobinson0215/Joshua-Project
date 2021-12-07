@@ -26,7 +26,7 @@ p {
   position:absolute;
     width:900px;
     bottom:20px;
-    left:27%;
+    left:26.5%;
   align-items: center;
   justify-content: center;
 }
@@ -104,4 +104,6 @@ h1, h2 {
   margin: 20px 20px 0px 0px;
 }
 
-
+html {
+  zoom: 80%;
+}
