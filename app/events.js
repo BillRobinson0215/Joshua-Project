@@ -11,7 +11,6 @@ const onSignUp = function (event) {
   const form = event.target
   const authData = getFormFields(form)
   console.log(authData)
-  console.log('almost there')
 
   joshApi
     .signUp(authData)
@@ -33,7 +32,6 @@ const onSignIn = function (event) {
       store.game = res.game
       console.log(store)
     })
-  // console.log('we got here!!!!!!!!')
     .catch(appUi.onSignInFailure)
   console.log('Welcome, Professor!')
 }
