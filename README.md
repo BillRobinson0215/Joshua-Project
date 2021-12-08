@@ -5,7 +5,7 @@ This Tic-Tac-Toe application allows the user to `create a new account`, `sign in
 I modeled my application after the 1980's movie War Games where a teenage boy, while trying to hack into a gaming company, accidentally hacks into a government computer containing an artificial intelligence called the War Operations Planned Response, W.O.P.R. for short. The W.O.P.R. was programmed to simulate and learn from playing different strategy games and simulate wartime scenarios. After being given control to the nations defense systems the W.O.P.R. simulates a WWIII scenario. It is about to launch missiles when it is forced to play itself in Tic-Tac-Toe to learn that the only way to win Tic-Tac-Toe and subsequently War is simply not to play. 
 
 ### Wire Frame:
-Screen Shot 2021-12-03 at 9.29.09 AM.png
+!['Wireframe'](./wireframe.png)
 
 ### User Stories:
 1. users must be able to sign in/out
